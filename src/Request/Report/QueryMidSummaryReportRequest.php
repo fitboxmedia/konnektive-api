@@ -26,6 +26,8 @@ class QueryMidSummaryReportRequest extends Request
 {
     protected $endpointUri = "/reports/mid-summary/";
 
+    protected $verb = "GET";
+
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',

@@ -42,6 +42,8 @@ class QueryOrderRequest extends Request
 {
     protected $endpointUri = "/order/query/";
 
+    protected $verb = "GET";
+
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',

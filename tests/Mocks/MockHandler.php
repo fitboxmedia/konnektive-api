@@ -1,6 +1,7 @@
 <?php
 
-namespace Konnektive\Handlers;
+namespace Konnektive\Tests\Mocks;
+
 
 use Konnektive\Contracts\IHandler;
 use Konnektive\Request\Request;
@@ -8,10 +9,10 @@ use Konnektive\Response\Response;
 
 /**
  * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/6/2016
- * Time: 5:54 PM
+ * Date: 10/8/2016
+ * Time: 11:30 AM
  */
-class CurlHandler implements IHandler
+class MockHandler implements IHandler
 {
 
     /**
@@ -30,15 +31,20 @@ class CurlHandler implements IHandler
                 curl_setopt($ch, CURLOPT_URL, $request->getUrl());
                 curl_setopt($ch, CURLOPT_POST, count($data));
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 break;
             case "GET":
                 curl_setopt($ch, CURLOPT_URL, $request->getUrl() . "?" . $request->getQuery());
                 break;
         }
 
-        $result = curl_exec($ch);
+        $result = curl_getinfo($ch);
         curl_close($ch);
 
-        return new Response($result);
+        $response = new Response($result);
+        $response->result = "TEST";
+        $response->message = "FAKE TEST OF MOCK HANDLER";
+        $response->raw = $result;
+        return $response;
     }
 }

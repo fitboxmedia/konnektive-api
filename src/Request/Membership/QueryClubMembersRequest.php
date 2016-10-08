@@ -31,6 +31,8 @@ class QueryClubMembersRequest extends Request
 {
     protected $endpointUri = "/members/query/";
 
+    protected $verb = "GET";
+
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',

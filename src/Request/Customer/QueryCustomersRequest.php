@@ -40,6 +40,8 @@ class QueryCustomersRequest extends Request
 {
     protected $endpointUri = "/customer/query/";
 
+    protected $verb = "GET";
+
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',

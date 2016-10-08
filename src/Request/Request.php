@@ -36,12 +36,23 @@ abstract class Request extends Model
         return $this->verb;
     }
 
-    public function getUrl()
+    public function getBaseUrl()
     {
-        return $this->baseUrl . $this->endpointUri;
+        return $this->baseUrl;
     }
 
-    public function getQuery(){
+    public function getEndpoint()
+    {
+        return $this->endpointUri;
+    }
+
+    public function getUrl()
+    {
+        return $this->getBaseUrl() . $this->getEndpoint();
+    }
+
+    public function getQuery()
+    {
         return http_build_query($this->attributes);
     }
 

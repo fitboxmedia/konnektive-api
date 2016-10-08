@@ -28,6 +28,8 @@ class QueryCampaignRequest extends Request
 {
     protected $endpointUri = "/campaign/query/";
 
+    protected $verb = "GET";
+
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',

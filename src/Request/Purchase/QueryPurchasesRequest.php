@@ -33,6 +33,9 @@ use Konnektive\Request\Request;
 class QueryPurchasesRequest extends Request
 {
     protected $endpointUri = "/purchase/query/";
+
+    protected $verb = "GET";
+
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',

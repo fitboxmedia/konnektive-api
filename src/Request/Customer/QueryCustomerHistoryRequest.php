@@ -27,6 +27,8 @@ class QueryCustomerHistoryRequest extends Request
 {
     protected $endpointUri = "/customer/history/";
 
+    protected $verb = "GET";
+
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',

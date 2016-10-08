@@ -32,6 +32,8 @@ class QueryRetentionReportRequest extends Request
 {
     protected $endpointUri = "/reports/retention/";
 
+    protected $verb = "GET";
+
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',
