@@ -39,9 +39,9 @@ class QueryClubMembersRequest extends Request
         'orderId' => 'max:30',
         'purchaseId' => 'max:30',
         'clubId' => 'required|integer',
-        'startDate' => 'required_without_all:memberId,orderId,purchaseId,customerId|date_format:"m/d/Y"',
-        'endDate' => 'required_without_all:memberId,orderId,purchaseId,customerId|date_format:"m/d/Y"',
-        'resultsPerPage' => 'integer|max:200',
-        'page' => 'integer'
+        'startDate' => 'required_without:memberId,orderId,purchaseId,customerId|date_format:"m/d/Y"|before:endDate',
+        'endDate' => 'required_without:memberId,orderId,purchaseId,customerId|date_format:"m/d/Y"|after:startDate',
+        'resultsPerPage' => 'numeric|max:200',
+        'page' => 'numeric'
     ];
 }

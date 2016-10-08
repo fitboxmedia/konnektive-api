@@ -38,14 +38,14 @@ class QueryPurchasesRequest extends Request
         'password' => 'required|max:32',
         'orderId' => 'max:30',
         'purchaseId' => 'max:30',
-        'customerId' => 'integer',
+        'customerId' => 'required|numeric',
         'firstName' => 'max:30',
         'lastName' => 'max:30',
         'emailAddress' => 'email|max:255',
-        'phoneNumber' => 'numeric|max:20',
+        'phoneNumber' => 'max:20|regex:/^[0-9-]+$/',
         'dateRangeType' => 'in:dateCreated,dateUpdated',
-        'startDate' => 'required_without:orderId,customerId,purchaseId|date_format:"m/d/Y"',
-        'endDate' => 'required_without:orderId,customerId,purchaseId|date_format:"m/d/Y"',
+        'startDate' => 'required_without:orderId,customerId,purchaseId|date_format:"m/d/Y"|before:endDate',
+        'endDate' => 'required_without:orderId,customerId,purchaseId|date_format:"m/d/Y"|after:startDate',
         'resultsPerPage' => 'integer|max:200',
         'page' => 'integer'
     ];

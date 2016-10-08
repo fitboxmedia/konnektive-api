@@ -30,10 +30,10 @@ class QueryCustomerHistoryRequest extends Request
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',
-        'customerId' => 'integer',
-        'startDate' => 'required_without:customerId|date_format:"m/d/Y"',
-        'endDate' => 'required_without:customerId|date_format:"m/d/Y"',
-        'resultsPerPage' => 'integer|max:200',
-        'page' => 'integer'
+        'customerId' => 'nullable|numeric',
+        'startDate' => 'required_without:customerId|date_format:"m/d/Y"|before:endDate',
+        'endDate' => 'required_without:customerId|date_format:"m/d/Y"|after:startDate',
+        'resultsPerPage' => 'numeric|max:200',
+        'page' => 'numeric'
     ];
 }

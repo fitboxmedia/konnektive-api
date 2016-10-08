@@ -40,7 +40,6 @@ use Konnektive\Request\Request;
 class PreauthOrderRequest extends Request
 {
     protected $endpointUri = "/order/preauth/";
-    public $paySource = "CREDITCARD";
 
     protected $rules = [
         'loginId' => "required|max:32",
@@ -49,7 +48,7 @@ class PreauthOrderRequest extends Request
         'orderId' => "required|max:20",
         'paySource' => "required|in:CREDITCARD",
         'cardNumber' => "required|creditcard",
-        'cardExpiryDate' => "required|date_multi_format:'m/Y','m/y'",
+        'cardExpiryDate' => "required|date_multi_format:m/Y,m/y",
         'cardSecurityCode' => "required|max:4",
         'firstName' => "max:30",
         'lastName' => "max:30",

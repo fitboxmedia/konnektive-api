@@ -38,10 +38,10 @@ class UpdateFulfillmentRequest extends Request
         'fulfillmentId' => 'required_without:orderId|max:32',
         'fulfillmentStatus' => 'required_with:fulfillmentId|max:32|in:SHIPPED,RMA_PENDING,RETURNED,CANCELLED',
         'trackingNumber' => 'required_if:fulfillmentStatus,SHIPPED|max:32',
-        'dateShipped' => 'required_if:fulfillmentStatus,SHIPPED|date_format:"m/d/Y"',
+        'dateShipped' => 'required_if:fulfillmentStatus,SHIPPED|date_format:m/d/Y',
         'refundAmount' => 'required_if:fulfillmentStatus,RMA_PENDING|numeric',
         'rmaNumber' => 'required_if:fulfillmentStatus,RMA_PENDING|max:32',
-        'dateReturned' => 'required_if:fulfillmentStatus,RETURNED|date_format:"m/d/Y"',
+        'dateReturned' => 'required_if:fulfillmentStatus,RETURNED|date_format:m/d/Y',
         'shipCarrier' => 'max:32',
         'shipMethod' => 'max:32',
     ];

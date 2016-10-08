@@ -14,6 +14,7 @@ use Konnektive\Request\Request;
  * Class ImportOrderRequest
  * @link https://api2.konnektive.com/docs/order_import/
  * @package Konnektive\Request\Order
+ *
  * @property    string $loginId    Api Login Id provided by Konnektive
  * @property    string $password    Api password provided by Konnektive
  * @property    string $orderId    The orderId returned by a previous import lead call. If passed, address and other values created with Import Lead do not need to be passed again.
@@ -77,7 +78,7 @@ use Konnektive\Request\Request;
 class ImportOrderRequest extends Request
 {
     protected $endpointUri = "/order/import/";
-    
+
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',
@@ -106,27 +107,31 @@ class ImportOrderRequest extends Request
         'shipState' => "required_if:billShipSame,false|max:6",
         'shipCountry' => "required_if:billShipSame,false|size:2",
         'paySource' => "required|in:CREDITCARD,CHECK,ACCTONFILE,PREPAID",
-        'cardNumber' => 'required_if:paySource,CREDITCARD|integer|max:16|creditcard',
+        'cardNumber' => 'required_if:paySource,CREDITCARD|numeric|digits:16|creditcard',
         'cardMonth' => 'required_if:paySource,CREDITCARD|date_format:"m"',
         'cardYear' => 'required_if:paySource,CREDITCARD|date_format:"Y"',
-        'cardSecurityCode' => "required_if:paySource,CREDITCARD|integer|max:4",
+        'cardSecurityCode' => "required_if:paySource,CREDITCARD|numeric|digits_between:3,4",
         /**
          * These may be conditionally required in the future, but to prevent tight coupling they have been left as their type and length validation.
          */
-        'preAuthBillerId' => "integer",
+        'preAuthBillerId' => "numeric",
         'preAuthMerchantTxnId' => "max:30",
         'salesTax' => "numeric",
         'achAccountType' => "required_if:paySource,CHECK|in:CHECKING,SAVINGS",
-        'achRoutingNumber' => "required_if:paySource,CHECK|integer|size:9",
-        'achAccountNumber' => "required_if:paySource,CHECK|integer|max:14",
-        'campaignId' => "required|integer",
+        'achRoutingNumber' => "required_if:paySource,CHECK|numeric|digits:9",
+        'achAccountNumber' => "required_if:paySource,CHECK|numeric|digits:14",
+        'campaignId' => "required|numeric",
         'forceQA' => "boolean",
         'insureShipment' => "boolean",
+        'product1_id' => 'required|numeric',
+        'product1_qty' => 'numeric',
+        'product1_price' => 'numeric',
+        'product1_shipPrice' => 'numeric',
         /**
          * Dynamic product number validation is provided in the rules() method.
          */
         'couponCode' => 'max:30',
-        'shipProfileId' => 'integer',
+        'shipProfileId' => 'numeric',
         'affId' => 'max:10',
         'sourceValue1' => "max:30",
         'sourceValue2' => "max:30",
@@ -147,20 +152,28 @@ class ImportOrderRequest extends Request
 
     public function rules()
     {
-        $props = get_object_vars($this);
-        foreach ($props as $key => $val) {
+        foreach ($this->attributes as $key => $val) {
             $matches = [];
             switch (true) {
                 case preg_match('/^product(\\d+)_id$/', $key, $matches):
-                    $this->rules[$key] = "required|integer";
+                    $this->rules[$key] = "required|numeric";
                     break;
                 case preg_match('/^product(\\d+)_qty$/', $key, $matches):
-                    $this->rules[$key] = "integer";
+                    if (!isset($this->rules["product" . $matches[1]."_id"])) {
+                        $this->rules["product" . $matches[1]."_id"] = "required|numeric";
+                    }
+                    $this->rules[$key] = "numeric";
                     break;
                 case preg_match('/^product(\\d+)_price$/', $key, $matches):
+                    if (!isset($this->rules["product" . $matches[1]."_id"])) {
+                        $this->rules["product" . $matches[1]."_id"] = "required|numeric";
+                    }
                     $this->rules[$key] = "numeric";
                     break;
                 case preg_match('/^product(\\d+)_shipPrice$/', $key, $matches):
+                    if (!isset($this->rules["product" . $matches[1]."_id"])) {
+                        $this->rules["product" . $matches[1]."_id"] = "required|numeric";
+                    }
                     $this->rules[$key] = "numeric";
                     break;
             }

@@ -30,8 +30,8 @@ class QueryMidSummaryReportRequest extends Request
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',
         'midId' => 'integer',
-        'startDate' => 'date_format:"m/d/Y"',
-        'endDate' => 'date_format:"m/d/Y"',
+        'startDate' => 'date_format:"m/d/Y"|before:endDate',
+        'endDate' => 'date_format:"m/d/Y"|after:startDate',
         'resultsPerPage' => 'integer|max:200',
         'page' => 'integer'
     ];

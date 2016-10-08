@@ -42,8 +42,8 @@ class QueryRetentionReportRequest extends Request
         'callCenterId' => 'max:255',
         'maxCycles' => 'integer',
         'include' => 'in:ByProduct,ByPublisher,BySubAff',
-        'startDate' => 'date_format:"m/d/Y"',
-        'endDate' => 'date_format:"m/d/Y"',
+        'startDate' => 'date_format:"m/d/Y"|before:endDate',
+        'endDate' => 'date_format:"m/d/Y"|after:startDate',
         'resultsPerPage' => 'integer|max:200',
         'page' => 'integer'
     ];

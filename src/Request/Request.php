@@ -13,6 +13,7 @@ use Illuminate\Translation\FileLoader;
 use Illuminate\Translation\Translator;
 use Illuminate\Validation\Factory;
 use Illuminate\Validation\ValidationException;
+use Konnektive\Config;
 use Konnektive\Model;
 
 abstract class Request extends Model
@@ -28,6 +29,8 @@ abstract class Request extends Model
     protected $rules = [];
     protected $messages = [];
 
+    protected $zonesList;
+
     public function getVerb()
     {
         return $this->verb;
@@ -36,6 +39,10 @@ abstract class Request extends Model
     public function getUrl()
     {
         return $this->baseUrl . $this->endpointUri;
+    }
+
+    public function getQuery(){
+        return http_build_query($this->attributes);
     }
 
     /**
@@ -53,7 +60,7 @@ abstract class Request extends Model
 
         $this->_applyCustomValidationRules($validation);
 
-        $validation->validate(array_intersect_key(get_object_vars($this), $rules), $rules, $this->messages);
+        $validation->validate($this->attributes, $rules, $this->messages);
     }
 
     /**
@@ -63,6 +70,11 @@ abstract class Request extends Model
     public function rules()
     {
         return $this->rules;
+    }
+
+    public function getZonesList($country = null)
+    {
+        return Config::get('zones' . ($country ? '.' . $country . '.valid_states' : ''));
     }
 
     /**
@@ -83,10 +95,8 @@ abstract class Request extends Model
         $validator->extend('date_multi_format', function ($attribute, $value, $formats) {
             // iterate through all formats
             foreach ($formats as $format) {
-
                 // parse date with current format
                 $parsed = date_parse_from_format($format, $value);
-
                 // if value matches given format return true=validation succeeded
                 if ($parsed['error_count'] === 0 && $parsed['warning_count'] === 0) {
                     return true;
@@ -101,8 +111,8 @@ abstract class Request extends Model
             /**
              * @use valid_state_for_country:<country attribute>
              */
-            if (isset($parameters[0]) && $country = $this->getAttribute($parameters[0])) {
-                $zones = require_once(dirname(__FILE__) . '../Data/zones_list.php');
+            if (isset($parameters[0]) && $country = strtoupper($this->getAttribute($parameters[0]))) {
+                $zones = $this->getZonesList();
                 return isset($zones[$country]) && isset($zones[$country]['valid_states'][$value]);
             }
             return false;

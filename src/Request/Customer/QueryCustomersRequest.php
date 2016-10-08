@@ -56,8 +56,8 @@ class QueryCustomersRequest extends Request
         'phoneNumber' => 'max:20',
         'ipAddress' => 'max:64',
         'dateRangeType' => 'in:dateCreated,dateUpdated,mostRecentActivity',
-        'startDate' => 'required_without:customerId|date_format:"m/d/Y"',
-        'endDate' => 'required_without:customerId|date_format:"m/d/Y"',
+        'startDate' => 'required_without:customerId|date_format:"m/d/Y"|before:endDate',
+        'endDate' => 'required_without:customerId|date_format:"m/d/Y"|after:startDate',
         'sortDir' => 'in:0,1',
         'resultsPerPage' => 'integer|max:200',
         'page' => 'integer'

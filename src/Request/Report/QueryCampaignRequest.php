@@ -34,8 +34,8 @@ class QueryCampaignRequest extends Request
         'campaignId' => 'integer',
         'campaignName' => 'max:30',
         'campaignType' => 'in:PHONE,ECOMMERCE,LANDER',
-        'startDate' => 'required_without:campaignId|date_format:"m/d/Y"',
-        'endDate' => 'required_without:campaignId|date_format:"m/d/Y"',
+        'startDate' => 'required_without:campaignId|date_format:"m/d/Y"|before:endDate',
+        'endDate' => 'required_without:campaignId|date_format:"m/d/Y"|after:startDate',
         'resultsPerPage' => 'integer|max:200',
         'page' => 'integer'
     ];

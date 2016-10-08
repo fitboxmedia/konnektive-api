@@ -8,6 +8,8 @@
 namespace Konnektive;
 
 use Illuminate\Validation\ValidationException;
+use Konnektive\Contracts\IHandler;
+use Konnektive\Handlers\CurlHandler;
 use Konnektive\Request\Request;
 use Konnektive\Response\Response;
 
@@ -19,33 +21,41 @@ use Konnektive\Response\Response;
 class Dispatcher
 {
     /**
+     * @var IHandler
+     */
+    protected $handler;
+
+    public function __construct(IHandler $handler = null)
+    {
+        $this->handler = $handler ? : new CurlHandler();
+    }
+
+    /**
+     * @param IHandler $handler
+     * @return void
+     */
+    public function setHandler(IHandler $handler)
+    {
+        $this->handler = $handler;
+    }
+
+    /**
+     * @return IHandler
+     */
+    public function getHandler()
+    {
+        return $this->handler;
+    }
+
+    /**
      * @param Request $request
      * @throws ValidationException
      * @return Response
      */
     public function handle(Request $request)
     {
-        /**
-         * Serialize all data from the request object and prepare it for final send off to konnektive.
-         */
         $request->validate();
 
-        //open connection
-        $ch = curl_init();
-
-        $data = $request->toArray();
-
-        switch ($request->getVerb()) {
-            case "POST":
-                curl_setopt($ch, CURLOPT_URL, $request->getUrl());
-                curl_setopt($ch, CURLOPT_POST, count($data));
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-                break;
-            case "GET":
-                curl_setopt($ch, CURLOPT_URL, $request->getUrl() . "?" . http_build_query($data));
-                break;
-        }
-
-        return new Response(curl_exec($ch));
+        return $this->getHandler()->handle($request);
     }
 }

@@ -59,11 +59,11 @@ class QueryOrderRequest extends Request
         'state' => 'max:6|valid_state_for_country:country',
         'country' => 'max:2',
         'emailAddress' => 'email|max:255',
-        'phoneNumber' => 'numeric|max:20',
+        'phoneNumber' => 'max:20|regex:/^[0-9-]+$/',
         'ipAddress' => 'max:64',
         'dateRangeType' => 'in:dateCreated,dateUpdated',
-        'startDate' => 'required_without_all:orderId,customerId|date_format:"m/d/Y"',
-        'endDate' => 'required_without_all:orderId,customerId|date_format:"m/d/Y"',
+        'startDate' => 'required_without:orderId,customerId|date_format:m/d/Y|before:endDate',
+        'endDate' => 'required_without:orderId,customerId|date_format:m/d/Y|after:startDate',
         'resultsPerPage' => 'integer|max:200',
         'page' => 'integer'
     ];
