@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7238f72bfe698ea43ded71d219a4827a",
-    "content-hash": "ffd735e03d609d213d39e67a1fadbd93",
+    "hash": "c2827ecf09d1ff712d36ebef5c55be48",
+    "content-hash": "4828dcc1f3031c64d0197ea6544b1dbb",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -209,16 +209,16 @@
         },
         {
             "name": "illuminate/database",
-            "version": "v5.3.4",
+            "version": "v5.3.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "048a65ba4a7ed250e16c82b6bb323daf38410050"
+                "reference": "c3adc9e07796d718df9f49ab325bda672a7c344a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/048a65ba4a7ed250e16c82b6bb323daf38410050",
-                "reference": "048a65ba4a7ed250e16c82b6bb323daf38410050",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/c3adc9e07796d718df9f49ab325bda672a7c344a",
+                "reference": "c3adc9e07796d718df9f49ab325bda672a7c344a",
                 "shasum": ""
             },
             "require": {
@@ -265,7 +265,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2016-08-25 15:46:46"
+            "time": "2016-10-04 01:41:20"
         },
         {
             "name": "illuminate/filesystem",
@@ -376,16 +376,16 @@
         },
         {
             "name": "illuminate/translation",
-            "version": "v5.3.4",
+            "version": "v5.3.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
-                "reference": "87c27cbe7d234683c112896b47a4603f91f435c1"
+                "reference": "cf9a4cb7a4e6165dca2aab6938e28e0aa3444c76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/translation/zipball/87c27cbe7d234683c112896b47a4603f91f435c1",
-                "reference": "87c27cbe7d234683c112896b47a4603f91f435c1",
+                "url": "https://api.github.com/repos/illuminate/translation/zipball/cf9a4cb7a4e6165dca2aab6938e28e0aa3444c76",
+                "reference": "cf9a4cb7a4e6165dca2aab6938e28e0aa3444c76",
                 "shasum": ""
             },
             "require": {
@@ -417,20 +417,20 @@
             ],
             "description": "The Illuminate Translation package.",
             "homepage": "https://laravel.com",
-            "time": "2016-08-16 15:38:33"
+            "time": "2016-09-21 13:48:32"
         },
         {
             "name": "illuminate/validation",
-            "version": "v5.3.4",
+            "version": "v5.3.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
-                "reference": "4eb398841b697b3e15d6b619633ed2881e9db0c1"
+                "reference": "0f4547739be417e376f00272d4de81d476432b74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/validation/zipball/4eb398841b697b3e15d6b619633ed2881e9db0c1",
-                "reference": "4eb398841b697b3e15d6b619633ed2881e9db0c1",
+                "url": "https://api.github.com/repos/illuminate/validation/zipball/0f4547739be417e376f00272d4de81d476432b74",
+                "reference": "0f4547739be417e376f00272d4de81d476432b74",
                 "shasum": ""
             },
             "require": {
@@ -467,7 +467,7 @@
             ],
             "description": "The Illuminate Validation package.",
             "homepage": "https://laravel.com",
-            "time": "2016-08-12 15:28:10"
+            "time": "2016-09-24 18:36:33"
         },
         {
             "name": "nesbot/carbon",
@@ -1341,16 +1341,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.6.0",
+            "version": "5.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a7f2db56518e50ab92f28f739810dfad2f223b6b"
+                "reference": "60c32c5b5e79c2248001efa2560f831da11cc2d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a7f2db56518e50ab92f28f739810dfad2f223b6b",
-                "reference": "a7f2db56518e50ab92f28f739810dfad2f223b6b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/60c32c5b5e79c2248001efa2560f831da11cc2d7",
+                "reference": "60c32c5b5e79c2248001efa2560f831da11cc2d7",
                 "shasum": ""
             },
             "require": {
@@ -1419,7 +1419,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-10-06 15:20:39"
+            "time": "2016-10-07 13:03:26"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
