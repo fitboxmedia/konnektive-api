@@ -1,4 +1,9 @@
 # Konnektive CRM API Integration
+[![Latest Stable Version](https://poser.pugx.org/hassletauf/konnektive-crm/v/stable)](https://packagist.org/packages/hassletauf/konnektive-crm)
+[![Latest Unstable Version](https://poser.pugx.org/hassletauf/konnektive-crm/v/unstable)](https://packagist.org/packages/hassletauf/konnektive-crm)
+[![Total Downloads](https://poser.pugx.org/hassletauf/konnektive-crm/downloads)](https://packagist.org/packages/hassletauf/konnektive-crm)
+[![License](https://poser.pugx.org/hassletauf/konnektive-crm/license)](https://packagist.org/packages/hassletauf/konnektive-crm)
+
 ---
 ## What It Is
 
@@ -13,7 +18,7 @@ When processing transactions and customer data through offers, marketers can ben
 
 ## Installation
 
-Installation instructions using composer COMING SOON!
+Use `composer require hassletauf/konnektive-crm` or add it manually to `composer.json` (See latest version in badges).
 
 ## Getting Started
 
