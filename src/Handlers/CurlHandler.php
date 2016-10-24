@@ -22,6 +22,7 @@ class CurlHandler implements IHandler
     {
         //open connection
         $ch = curl_init();
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         $data = $request->toArray();
 
