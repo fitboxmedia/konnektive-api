@@ -83,6 +83,15 @@ abstract class Request extends Model
         return $this->rules;
     }
 
+    /**
+     * Takes a set of messages in a format expected by illuminate/validation.
+     * @param array $messages
+     */
+    public function setMessages(array $messages)
+    {
+        $this->messages = isset($messages) ? $messages : [];
+    }
+
     public function getZonesList($country = null)
     {
         return Config::get('zones' . ($country ? '.' . $country . '.valid_states' : ''));
