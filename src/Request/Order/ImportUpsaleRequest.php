@@ -27,7 +27,7 @@ use Konnektive\Request\Request;
  */
 class ImportUpsaleRequest extends Request
 {
-    protected $endpointUri = "/upsale/import";
+    protected $endpointUri = "/upsale/import/";
 
     protected $rules = [
         'loginId' => 'required|max:32',
