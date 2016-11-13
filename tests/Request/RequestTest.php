@@ -256,6 +256,16 @@ class RequestTest extends TestCase
         $this->assertValid($request);
     }
 
+    public function testDynamicProductsWithJustProductId(){
+        $request = new ImportOrderRequest();
+        $this->fillModel($request);
+
+        $request->product1_id = "10";
+        $request->product2_id = "20";
+
+        $this->assertValid($request);
+    }
+
     public function testDynamicProductsInOrderRequestFailure()
     {
         $request = new ImportOrderRequest();

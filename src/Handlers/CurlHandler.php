@@ -40,6 +40,15 @@ class CurlHandler implements IHandler
         $result = curl_exec($ch);
         curl_close($ch);
 
-        return new Response($result);
+        if (json_decode($result)) {
+            return new Response($result);
+        } else {
+            $response = new Response("");
+            $response->result = "FAILURE";
+            $response->raw = $result;
+            $response->message = "API result was not properly formatted.";
+
+            return $response;
+        }
     }
 }
