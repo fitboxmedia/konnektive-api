@@ -26,6 +26,7 @@ use Konnektive\Request\Order\OrderQARequest;
 use Konnektive\Request\Order\PreauthOrderRequest;
 use Konnektive\Request\Order\QueryOrderRequest;
 use Konnektive\Request\Order\RefundOrderRequest;
+use Konnektive\Request\Order\RerunDeclinedSaleRequest;
 use Konnektive\Request\Order\UpdateFulfillmentRequest;
 use Konnektive\Request\Purchase\CancelPurchaseRequest;
 use Konnektive\Request\Purchase\QueryPurchasesRequest;
@@ -64,6 +65,7 @@ class RequestTest extends TestCase
         QueryOrderRequest::class,
         RefundOrderRequest::class,
         UpdateFulfillmentRequest::class,
+        RerunDeclinedSaleRequest::class,
         //Purchase
         CancelPurchaseRequest::class,
         QueryPurchasesRequest::class,

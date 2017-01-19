@@ -74,6 +74,9 @@ use Konnektive\Request\Request;
  * @property    string $custom5    Custom value to store along with the order record
  * @property    string $redirectsTo    Indicates where the bank should redirect the customer on a successful 3DS transaction
  * @property    string $errorRedirectsTo    Indicates where the bank should redirect the customer on a failed 3DS transaction
+ * @property    string $eci    E-commerce Indicator: a 3DS value that the CRM will pass through to the processor if provided
+ * @property    string $xid     Cardholder Authentication Transaction Id: a 3DS value that the CRM will pass through to the processor if provided
+ * @property    string $cavv    Cardholder Authentication Verification Value: a 3DS value that the CRM will pass through to the processor if provided
  */
 class ImportOrderRequest extends Request
 {
@@ -148,6 +151,9 @@ class ImportOrderRequest extends Request
          */
         'redirectsTo' => "max:300",
         'errorRedirectsTo' => "max:300",
+        'eci' => "max:200",
+        'xid' => "max:200",
+        'cavv' => "max:200"
     ];
 
     public function rules()
@@ -159,20 +165,20 @@ class ImportOrderRequest extends Request
                     $this->rules[$key] = "required|numeric";
                     break;
                 case preg_match('/^product(\\d+)_qty$/', $key, $matches):
-                    if (!isset($this->rules["product" . $matches[1]."_id"])) {
-                        $this->rules["product" . $matches[1]."_id"] = "required|numeric";
+                    if (!isset($this->rules["product" . $matches[1] . "_id"])) {
+                        $this->rules["product" . $matches[1] . "_id"] = "required|numeric";
                     }
                     $this->rules[$key] = "numeric";
                     break;
                 case preg_match('/^product(\\d+)_price$/', $key, $matches):
-                    if (!isset($this->rules["product" . $matches[1]."_id"])) {
-                        $this->rules["product" . $matches[1]."_id"] = "required|numeric";
+                    if (!isset($this->rules["product" . $matches[1] . "_id"])) {
+                        $this->rules["product" . $matches[1] . "_id"] = "required|numeric";
                     }
                     $this->rules[$key] = "numeric";
                     break;
                 case preg_match('/^product(\\d+)_shipPrice$/', $key, $matches):
-                    if (!isset($this->rules["product" . $matches[1]."_id"])) {
-                        $this->rules["product" . $matches[1]."_id"] = "required|numeric";
+                    if (!isset($this->rules["product" . $matches[1] . "_id"])) {
+                        $this->rules["product" . $matches[1] . "_id"] = "required|numeric";
                     }
                     $this->rules[$key] = "numeric";
                     break;
