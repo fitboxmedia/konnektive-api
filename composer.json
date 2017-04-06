@@ -1,11 +1,11 @@
 {
-  "name": "hassletauf/konnektive-crm",
+  "name": "progjp/konnektive-api",
   "description": "A PHP implementation of the Konnektive CRM v2 API",
   "license": "MIT",
   "authors": [
     {
-      "name": "Hassletauf",
-      "email": "hassletauf@gmail.com",
+      "name": "Rzavyalov",
+      "email": "zavyalovroman@gmail.com",
       "role": "Developer"
     }
   ],
