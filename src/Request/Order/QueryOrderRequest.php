@@ -64,8 +64,8 @@ class QueryOrderRequest extends Request
         'phoneNumber' => 'max:20|regex:/^[0-9-]+$/',
         'ipAddress' => 'max:64',
         'dateRangeType' => 'in:dateCreated,dateUpdated',
-        'startDate' => 'required_without:orderId,customerId|date_format:m/d/Y|before:endDate',
-        'endDate' => 'required_without:orderId,customerId|date_format:m/d/Y|after:startDate',
+        'startDate' => 'required_without:orderId|date_format:m/d/Y|before:endDate',
+        'endDate' => 'required_without:orderId|date_format:m/d/Y|after:startDate',
         'resultsPerPage' => 'integer|max:200',
         'page' => 'integer'
     ];
