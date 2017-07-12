@@ -26,13 +26,13 @@ use Konnektive\Request\Request;
  */
 class ImportClickRequest extends Request
 {
-    protected $endpointUri = "/landers/clicks/import";
+    protected $endpointUri = "/landers/clicks/import/";
 
     protected $rules = [
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',
         'pageType' => 'required|in:presellPage,leadPage,checkoutPage,upsellPage1,upsellPage2,upsellPage3,upsellPage4,thankyouPage',
-        'ipAddress' => 'required_without:sessionId',
+        'ipAddress' => 'required_without:sessionId|ip',
         'userAgent' => 'required|max:300',
         'campaignId' => 'required|int',
         'requestUri' => 'required_without:sessionId|max:500',

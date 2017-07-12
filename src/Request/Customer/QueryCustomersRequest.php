@@ -15,27 +15,26 @@ use Konnektive\Request\Request;
  * @link https://api2.konnektive.com/docs/customer_query/
  * @package Konnektive\Request\Customer
  *
- * @property    string  $loginId        Api Login Id provided by Konnektive
- * @property    string  $password       Api password provided by Konnektive
- * @property    int     $customerId     customer's id
- * @property    string  $firstName      customer's first name
- * @property    string  $lastName       customer's last name
- * @property    string  $companyName    customer's company
- * @property    string  $address1       line 1 of customer billing address, should include street address and number
- * @property    string  $address2       line 2 of customer billing address (apt. number, suite number, etc)
- * @property    string  $postalCode     customer's billing postal code
- * @property    string  $city           customer's city
- * @property    string  $state          customer's billing state, 2 character ISO codes for US states, foreign countries use country iso code + 3 digit number
- * @property    string  $country        customer's billing country
- * @property    string  $emailAddress   customers email address
- * @property    string  $phoneNumber    customers phone number
- * @property    string  $ipAddress      customers ip address
- * @property    string  $dateRangeType  defaults to dateCreated
- * @property    string  $startDate      only purchases created on or after this date
- * @property    string  $endDate        only purchases created on or before this date
- * @property    string  $sortDir        0 is descending, while 1 is ascending
- * @property    int     $resultsPerPage Number of results to return (defaults to 25)
- * @property    int     $page           which page of the query results to return
+ * @property    string loginId    Api Login Id provided by Konnektive
+ * @property    string password    Api password provided by Konnektive
+ * @property    string firstName    customer's first name
+ * @property    string lastName    customer's last name
+ * @property    string companyName    customer's company
+ * @property    string address1    line 1 of customer billing address, should include street address and number
+ * @property    string address2    line 2 of customer billing address (apt. number, suite number, etc)
+ * @property    string postalCode    customer's billing postal code
+ * @property    string city    customer's city
+ * @property    string state    customer's billing state, 2 character ISO codes for US states, foreign countries use country iso code + 3 digit number
+ * @property    string country    customer's billing country
+ * @property    string emailAddress    customers email address
+ * @property    string phoneNumber    customers phone number
+ * @property    string ipAddress    customers ip address
+ * @property    string dateRangeType    defaults to dateCreated
+ * @property    string startDate    only purchases created on or after this date
+ * @property    string endDate    only purchases created on or before this date
+ * @property    string sortDir    0 is descending, while 1 is ascending
+ * @property    int resultsPerPage    Number of results to return (defaults to 25)
+ * @property    int page    which page of the query results to return
  */
 class QueryCustomersRequest extends Request
 {
