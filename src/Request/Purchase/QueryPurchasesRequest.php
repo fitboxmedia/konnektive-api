@@ -47,8 +47,8 @@ class QueryPurchasesRequest extends Request
         'emailAddress' => 'email|max:255',
         'phoneNumber' => 'max:20|regex:/^[0-9-]+$/',
         'dateRangeType' => 'in:dateCreated,dateUpdated',
-        'startDate' => 'required_without:orderId,customerId,purchaseId|date_format:"m/d/Y"|before:endDate',
-        'endDate' => 'required_without:orderId,customerId,purchaseId|date_format:"m/d/Y"|after:startDate',
+        'startDate' => 'date_format:"m/d/Y"|before:endDate',
+        'endDate' => 'date_format:"m/d/Y"|after:startDate',
         'resultsPerPage' => 'integer|max:200',
         'page' => 'integer'
     ];
