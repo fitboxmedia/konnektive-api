@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 12:11 PM
- */
 
 namespace Konnektive\Request\Purchase;
 
@@ -37,19 +32,19 @@ class QueryPurchasesRequest extends Request
     protected $verb = "GET";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'orderId' => 'max:30',
-        'purchaseId' => 'max:30',
-        'customerId' => 'required|numeric',
-        'firstName' => 'max:30',
-        'lastName' => 'max:30',
-        'emailAddress' => 'email|max:255',
-        'phoneNumber' => 'max:20|regex:/^[0-9-]+$/',
-        'dateRangeType' => 'in:dateCreated,dateUpdated',
-        'startDate' => 'date_format:"m/d/Y"|before:endDate',
-        'endDate' => 'date_format:"m/d/Y"|after:startDate',
+        'loginId'        => 'required|max:32',
+        'password'       => 'required|max:32',
+        'orderId'        => 'max:30',
+        'purchaseId'     => 'max:30',
+        'customerId'     => 'required_without:startDate,endDate|numeric',
+        'firstName'      => 'max:30',
+        'lastName'       => 'max:30',
+        'emailAddress'   => 'email|max:255',
+        'phoneNumber'    => 'max:20|regex:/^[0-9-]+$/',
+        'dateRangeType'  => 'in:dateCreated,dateUpdated',
+        'startDate'      => 'required_without:customerId|date_format:"m/d/Y"|before:endDate',
+        'endDate'        => 'required_without:customerId|date_format:"m/d/Y"|after:startDate',
         'resultsPerPage' => 'integer|max:200',
-        'page' => 'integer'
+        'page'           => 'integer',
     ];
 }
