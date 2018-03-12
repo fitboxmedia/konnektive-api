@@ -96,4 +96,4 @@ try {
 
 ## Requirements
 
-  - PHP 5.6.3+
+  - PHP 7.0+
