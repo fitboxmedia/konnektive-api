@@ -82,8 +82,8 @@ class QueryTransactionsRequest extends Request
         'phoneNumber' => 'max:20|regex:/^[0-9-]+$/',
         'affId' => 'max:20',
         'dateRangeType' => 'in:dateCreated,dateUpdated',
-        'startDate' => 'required_without_all:customerId,purchaseId,orderId',
-        'endDate' => 'required_without_all:customerId,purchaseId,orderId',
+        'startDate' => 'required_without_all:customerId,purchaseId,orderId|date_format:m/d/Y|before_or_equal:endDate',
+        'endDate' => 'required_without_all:customerId,purchaseId,orderId|date_format:m/d/Y|after_or_equal:startDate',
         'sortDir' => 'integer|in:0,1',
         'resultsPerPage' => 'integer|max:200',
         'page' => 'integer'
