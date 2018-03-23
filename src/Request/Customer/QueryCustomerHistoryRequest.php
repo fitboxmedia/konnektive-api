@@ -33,8 +33,8 @@ class QueryCustomerHistoryRequest extends Request
         'loginId' => 'required|max:32',
         'password' => 'required|max:32',
         'customerId' => 'nullable|numeric',
-        'startDate' => 'required_without:customerId|date_format:"m/d/Y"|before:endDate',
-        'endDate' => 'required_without:customerId|date_format:"m/d/Y"|after:startDate',
+        'startDate' => 'required',
+        'endDate' => 'required',
         'resultsPerPage' => 'numeric|max:200',
         'page' => 'numeric'
     ];

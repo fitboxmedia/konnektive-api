@@ -22,7 +22,7 @@ abstract class Request extends Model
     protected $endpointUri;
     protected $verb = "POST";
     /**
-     * Examples for all rules and messages can be found here https://laravel.com/docs/5.3/validation. Other features of the Laravel
+     * Examples for all rules and messages can be found here https://laravel.com/docs/5.4/validation. Other features of the Laravel
      * framework will not be available in this application.
      * @var array
      */
