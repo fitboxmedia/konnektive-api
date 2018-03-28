@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 12:58 PM
- */
 
 namespace Konnektive\Request\Transaction;
 
@@ -22,18 +17,22 @@ use Konnektive\Request\Request;
  * @property    string $chargebackDate    the date of the chargeback
  * @property    string $chargebackReasonCode    reason code provided by the issuer
  * @property    string $chargebackNote    Any additional notes about the chargeback
+ * @property    string $markChargeback    If set to true, a chargeback will be marked or updated for the transaction
+ * @property    string $revertChargeback    If set to true, any chargeback for the transaction will be reverted
  */
 class UpdateTransactionRequest extends Request
 {
     protected $endpointUri = "/transactions/update/";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'transactionId' => 'required|max:30',
-        'chargebackAmount' => 'required|numeric',
-        'chargebackDate' => 'required|date_format:"m/d/Y"',
-        'chargebackReasonCode' => 'required|max:10',
-        'chargebackNote' => 'required|max:500',
+        'loginId'              => 'required|max:32',
+        'password'             => 'required|max:32',
+        'transactionId'        => 'required|max:30',
+        'chargebackAmount'     => 'required_if:markChargeback,1|numeric',
+        'chargebackDate'       => 'required_if:markChargeback,1|date_format:"m/d/Y"',
+        'chargebackReasonCode' => 'required_if:markChargeback,1|max:10',
+        'chargebackNote'       => 'required_if:markChargeback,1|max:500',
+        'markChargeback'       => 'required_without:revertChargeback',
+        'revertChargeback'     => 'required_without:markChargeback',
     ];
 }
