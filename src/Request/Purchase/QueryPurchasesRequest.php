@@ -34,8 +34,8 @@ class QueryPurchasesRequest extends Request
     protected $rules = [
         'loginId'        => 'required|max:32',
         'password'       => 'required|max:32',
-        'orderId'        => 'required_without_all:customerId,purchaseId|max:30',
-        'purchaseId'     => 'required_without_all:orderId,customerId|max:30',
+        'orderId'        => 'required_without_all:startDate,endDate,customerId,purchaseId|max:30',
+        'purchaseId'     => 'required_without_all:startDate,endDate,orderId,customerId|max:30',
         'customerId'     => 'required_without_all:startDate,endDate,purchaseId,orderId|numeric',
         'firstName'      => 'max:30',
         'lastName'       => 'max:30',
