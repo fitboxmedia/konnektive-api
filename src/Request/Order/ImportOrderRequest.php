@@ -48,7 +48,7 @@ class ImportOrderRequest extends Request
         'cardNumber'         => 'required|numeric|digits:16|creditcard',
         'cardSecurityCode'   => 'required|numeric|digits_between:3,4',
         'orderItems'         => 'required|json',
-        'cardMonth'          => 'required|date_format:"m"',
+        'cardMonth'          => 'required|between:1,12',
         'cardYear'           => 'required|date_format:"Y"',
         'redirectsTo'        => 'max:300',
         'errorRedirectsTo'   => 'max:300',
