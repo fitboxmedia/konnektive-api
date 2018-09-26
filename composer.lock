@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "805f3b8dad704739d0faa0d20a320ca3",
-    "content-hash": "aae3827392db62abb777d3cbbda763d6",
+    "hash": "c9c681a9fdc24ef9f3f289d638cfa0ca",
+    "content-hash": "eacaa1461398d759be8dac2e6fffe7d4",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -126,7 +126,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.7.5",
+            "version": "v5.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -170,7 +170,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.7.5",
+            "version": "v5.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -214,16 +214,16 @@
         },
         {
             "name": "illuminate/database",
-            "version": "v5.7.5",
+            "version": "v5.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "c83247ced8194ef41a1f58e232ee00be9df634a4"
+                "reference": "6f97d818c90f751e69d1696e4b17acac6bef7aed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/c83247ced8194ef41a1f58e232ee00be9df634a4",
-                "reference": "c83247ced8194ef41a1f58e232ee00be9df634a4",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/6f97d818c90f751e69d1696e4b17acac6bef7aed",
+                "reference": "6f97d818c90f751e69d1696e4b17acac6bef7aed",
                 "shasum": ""
             },
             "require": {
@@ -269,11 +269,11 @@
                 "orm",
                 "sql"
             ],
-            "time": "2018-09-19 15:13:04"
+            "time": "2018-09-25 14:27:46"
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v5.7.5",
+            "version": "v5.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -325,7 +325,7 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.7.5",
+            "version": "v5.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
@@ -384,7 +384,7 @@
         },
         {
             "name": "illuminate/translation",
-            "version": "v5.7.5",
+            "version": "v5.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
@@ -429,7 +429,7 @@
         },
         {
             "name": "illuminate/validation",
-            "version": "v5.7.5",
+            "version": "v5.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
@@ -2277,6 +2277,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
+        "ext-curl": "*",
         "php": ">=7.0"
     },
     "platform-dev": []
