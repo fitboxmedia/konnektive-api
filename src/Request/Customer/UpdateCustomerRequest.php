@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 12:40 PM
- */
 
 namespace Konnektive\Request\Customer;
 
@@ -49,33 +44,33 @@ class UpdateCustomerRequest extends Request
     protected $endpointUri = "/customer/update/";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'customerId' => 'required|max:30',
-        'firstName' => 'max:30',
-        'lastName' => 'max:30',
-        'companyName' => 'max:30',
-        'address1' => 'max:30',
-        'address2' => 'max:30',
-        'postalCode' => 'max:20',
-        'city' => 'max:30',
-        'state' => 'max:6|valid_state_for_country:country',
-        'country' => 'max:2',
-        'emailAddress' => 'max:255',
-        'phoneNumber' => 'max:20',
-        'shipFirstName' => 'max:30',
-        'shipLastName' => 'max:30',
+        'loginId'         => 'required|max:32',
+        'password'        => 'required|max:32',
+        'customerId'      => 'required|max:30',
+        'firstName'       => 'max:30',
+        'lastName'        => 'max:30',
+        'companyName'     => 'max:30',
+        'address1'        => 'max:30',
+        'address2'        => 'max:30',
+        'postalCode'      => 'max:20',
+        'city'            => 'max:30',
+        'state'           => 'max:6|valid_state_for_country:country',
+        'country'         => 'max:2',
+        'emailAddress'    => 'max:255',
+        'phoneNumber'     => 'max:20',
+        'shipFirstName'   => 'max:30',
+        'shipLastName'    => 'max:30',
         'shipCompanyName' => "max:30",
-        'shipAddress1' => 'max:30',
-        'shipAddress2' => 'max:30',
-        'shipPostalCode' => 'max:20',
-        'shipCity' => "max:30",
-        'shipState' => "max:6|valid_state_for_country:shipCountry",
-        'shipCountry' => "size:2",
-        'custom1' => "max:50",
-        'custom2' => "max:50",
-        'custom3' => "max:50",
-        'custom4' => "max:50",
-        'custom5' => "max:50",
+        'shipAddress1'    => 'max:30',
+        'shipAddress2'    => 'max:30',
+        'shipPostalCode'  => 'max:20',
+        'shipCity'        => "max:30",
+        'shipState'       => "max:6|valid_state_for_country:shipCountry",
+        'shipCountry'     => "size:2",
+        'custom1'         => "max:50",
+        'custom2'         => "max:50",
+        'custom3'         => "max:50",
+        'custom4'         => "max:50",
+        'custom5'         => "max:50",
     ];
 }

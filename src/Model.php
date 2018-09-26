@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 8:21 AM
- */
 
 namespace Konnektive;
 
@@ -592,6 +587,7 @@ class Model
         if (array_key_exists($key, $this->attributes)) {
             return $this->attributes[$key];
         }
+
         return null;
     }
 

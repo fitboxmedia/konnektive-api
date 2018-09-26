@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/1/2016
- * Time: 10:12 PM
- */
 
 namespace Konnektive;
 
@@ -27,7 +22,7 @@ class Dispatcher
 
     public function __construct(IHandler $handler = null)
     {
-        $this->handler = $handler ? : new CurlHandler();
+        $this->handler = $handler ?: new CurlHandler();
     }
 
     /**

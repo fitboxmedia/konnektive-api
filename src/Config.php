@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/7/2016
- * Time: 6:49 AM
- */
 
 namespace Konnektive;
 
@@ -33,7 +28,7 @@ final class Config
 
     protected static function get($key)
     {
-        if(empty($key) || !is_scalar($key)){
+        if (empty($key) || !is_scalar($key)) {
             throw new \InvalidArgumentException("Invalid key provided");
         }
 
@@ -78,7 +73,7 @@ final class Config
             throw new \RuntimeException('An instance could not be resolved');
         }
 
-        return forward_static_call_array(array(static::class, $method), $arguments);
+        return forward_static_call_array([static::class, $method], $arguments);
     }
 
 }

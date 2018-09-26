@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/8/2016
- * Time: 11:34 AM
- */
 
 namespace Konnektive\Tests;
 

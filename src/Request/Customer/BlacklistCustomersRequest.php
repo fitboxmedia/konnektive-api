@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 12:29 PM
- */
 
 namespace Konnektive\Request\Customer;
 

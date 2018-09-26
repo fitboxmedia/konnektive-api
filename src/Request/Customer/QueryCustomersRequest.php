@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 12:29 PM
- */
 
 namespace Konnektive\Request\Customer;
 
@@ -43,26 +38,26 @@ class QueryCustomersRequest extends Request
     protected $verb = "GET";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'customerId'=> 'integer',
-        'firstName' => 'max:30',
-        'lastName' => 'max:30',
-        'companyName' => 'max:30',
-        'address1' => 'max:30',
-        'address2' => 'max:30',
-        'postalCode' => 'max:20',
-        'city' => 'max:30',
-        'state' => 'max:6|valid_state_for_country:country',
-        'country' => 'max:2',
-        'emailAddress' => 'email',
-        'phoneNumber' => 'max:20',
-        'ipAddress' => 'max:64',
-        'dateRangeType' => 'in:dateCreated,dateUpdated,mostRecentActivity',
-        'startDate' => 'required_without:customerId|date_format:"m/d/Y"|before:endDate',
-        'endDate' => 'required_without:customerId|date_format:"m/d/Y"|after:startDate',
-        'sortDir' => 'in:0,1',
+        'loginId'        => 'required|max:32',
+        'password'       => 'required|max:32',
+        'customerId'     => 'integer',
+        'firstName'      => 'max:30',
+        'lastName'       => 'max:30',
+        'companyName'    => 'max:30',
+        'address1'       => 'max:30',
+        'address2'       => 'max:30',
+        'postalCode'     => 'max:20',
+        'city'           => 'max:30',
+        'state'          => 'max:6|valid_state_for_country:country',
+        'country'        => 'max:2',
+        'emailAddress'   => 'email',
+        'phoneNumber'    => 'max:20',
+        'ipAddress'      => 'max:64',
+        'dateRangeType'  => 'in:dateCreated,dateUpdated,mostRecentActivity',
+        'startDate'      => 'required_without:customerId|date_format:"m/d/Y"|before:endDate',
+        'endDate'        => 'required_without:customerId|date_format:"m/d/Y"|after:startDate',
+        'sortDir'        => 'in:0,1',
         'resultsPerPage' => 'integer|max:200',
-        'page' => 'integer'
+        'page'           => 'integer',
     ];
 }

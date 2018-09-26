@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 12:44 PM
- */
 
 namespace Konnektive\Request\Customer;
 
@@ -30,12 +25,12 @@ class QueryCustomerHistoryRequest extends Request
     protected $verb = "GET";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'customerId' => 'nullable|numeric',
-        'startDate' => 'required',
-        'endDate' => 'required',
+        'loginId'        => 'required|max:32',
+        'password'       => 'required|max:32',
+        'customerId'     => 'nullable|numeric',
+        'startDate'      => 'required',
+        'endDate'        => 'required',
         'resultsPerPage' => 'numeric|max:200',
-        'page' => 'numeric'
+        'page'           => 'numeric',
     ];
 }

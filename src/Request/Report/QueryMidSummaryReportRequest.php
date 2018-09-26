@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 1:21 PM
- */
 
 namespace Konnektive\Request\Report;
 
@@ -29,12 +24,12 @@ class QueryMidSummaryReportRequest extends Request
     protected $verb = "GET";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'midId' => 'integer',
-        'startDate' => 'date_format:"m/d/Y"|before:endDate',
-        'endDate' => 'date_format:"m/d/Y"|after:startDate',
+        'loginId'        => 'required|max:32',
+        'password'       => 'required|max:32',
+        'midId'          => 'integer',
+        'startDate'      => 'date_format:"m/d/Y"|before:endDate',
+        'endDate'        => 'date_format:"m/d/Y"|after:startDate',
         'resultsPerPage' => 'integer|max:200',
-        'page' => 'integer'
+        'page'           => 'integer',
     ];
 }

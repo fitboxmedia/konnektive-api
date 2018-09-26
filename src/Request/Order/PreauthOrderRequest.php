@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 8:53 AM
- */
 
 namespace Konnektive\Request\Order;
 
@@ -42,25 +37,25 @@ class PreauthOrderRequest extends Request
     protected $endpointUri = "/order/preauth/";
 
     protected $rules = [
-        'loginId' => "required|max:32",
-        'password' => "required|max:32",
-        'customerId' => "required|max:10",
-        'orderId' => "required|max:20",
-        'paySource' => "required|in:CREDITCARD",
-        'cardNumber' => "required|creditcard",
-        'cardExpiryDate' => "required|date_multi_format:m/Y,m/y",
+        'loginId'          => "required|max:32",
+        'password'         => "required|max:32",
+        'customerId'       => "required|max:10",
+        'orderId'          => "required|max:20",
+        'paySource'        => "required|in:CREDITCARD",
+        'cardNumber'       => "required|creditcard",
+        'cardExpiryDate'   => "required|date_multi_format:m/Y,m/y",
         'cardSecurityCode' => "required|max:4",
-        'firstName' => "max:30",
-        'lastName' => "max:30",
-        'companyName' => "max:30",
-        'address1' => "max:30",
-        'address2' => "max:30",
-        'postalCode' => "max:20",
-        'city' => "max:30",
-        'state' => "max:6",
-        'country' => "max:2",
-        'emailAddress' => "max:255",
-        'phoneNumber' => "max:20",
-        'ipAddress' => "max:255"
+        'firstName'        => "max:30",
+        'lastName'         => "max:30",
+        'companyName'      => "max:30",
+        'address1'         => "max:30",
+        'address2'         => "max:30",
+        'postalCode'       => "max:20",
+        'city'             => "max:30",
+        'state'            => "max:6",
+        'country'          => "max:2",
+        'emailAddress'     => "max:255",
+        'phoneNumber'      => "max:20",
+        'ipAddress'        => "max:255",
     ];
 }

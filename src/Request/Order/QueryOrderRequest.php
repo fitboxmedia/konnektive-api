@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 11:36 AM
- */
 
 namespace Konnektive\Request\Order;
 
@@ -27,6 +22,7 @@ use Konnektive\Request\Request;
  * @property    string address2    line 2 of customer billing address (apt. number, suite number, etc)
  * @property    string postalCode    customer's billing postal code
  * @property    string city    customer's city
+ * @property    string customerId    customer's ID
  * @property    string state    customer's billing state, 2 character ISO codes for US states, foreign countries use country iso code + 3 digit number
  * @property    string country    customer's billing country
  * @property    string emailAddress    customers email address

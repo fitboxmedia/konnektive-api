@@ -1,13 +1,13 @@
 # Konnektive CRM API Integration
-[![Latest Stable Version](https://poser.pugx.org/hassletauf/konnektive-crm/v/stable)](https://packagist.org/packages/hassletauf/konnektive-crm)
-[![Latest Unstable Version](https://poser.pugx.org/hassletauf/konnektive-crm/v/unstable)](https://packagist.org/packages/hassletauf/konnektive-crm)
-[![Total Downloads](https://poser.pugx.org/hassletauf/konnektive-crm/downloads)](https://packagist.org/packages/hassletauf/konnektive-crm)
-[![License](https://poser.pugx.org/hassletauf/konnektive-crm/license)](https://packagist.org/packages/hassletauf/konnektive-crm)
+[![Latest Stable Version](https://poser.pugx.org/fitboxmedia/konnektive-api/v/stable)](https://packagist.org/packages/fitboxmedia/konnektive-api)
+[![Latest Unstable Version](https://poser.pugx.org/fitboxmedia/konnektive-api/v/unstable)](https://packagist.org/packages/fitboxmedia/konnektive-api)
+[![Total Downloads](https://poser.pugx.org/fitboxmedia/konnektive-api/downloads)](https://packagist.org/packages/fitboxmedia/konnektive-api)
+[![License](https://poser.pugx.org/fitboxmedia/konnektive-api/license)](https://packagist.org/packages/fitboxmedia/konnektive-api)
 
 ---
 ## What It Is
 
-A simple API integration that allows developers to interact with Konnektive CRM's v2 API. All methods are implemented and fully validated as of October 8, 2016
+A simple API integration that allows developers to interact with Konnektive CRM's v2 API. All methods are implemented and fully validated as of September 24, 2018
 
 Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
 
@@ -18,7 +18,7 @@ When processing transactions and customer data through offers, marketers can ben
 
 ## Installation
 
-Use `composer require hassletauf/konnektive-crm` or add it manually to `composer.json` (See latest version in badges).
+Use `composer require fitboxmedia/konnektive-api` or add it manually to `composer.json` (See latest version in badges).
 
 ## Getting Started
 

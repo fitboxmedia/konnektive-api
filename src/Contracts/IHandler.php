@@ -1,12 +1,9 @@
 <?php
-namespace Konnektive\Contracts;
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/6/2016
- * Time: 5:51 PM
- */
 
-interface IHandler {
+namespace Konnektive\Contracts;
+
+interface IHandler
+{
     /**
      * @param $request \Konnektive\Request\Request
      * @return \Konnektive\Response\Response

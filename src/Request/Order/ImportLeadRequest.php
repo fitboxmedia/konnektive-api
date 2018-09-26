@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/1/2016
- * Time: 10:30 PM
- */
 
 namespace Konnektive\Request\Order;
 
@@ -36,21 +31,41 @@ class ImportLeadRequest extends Request
 {
     protected $endpointUri = "/leads/import/";
     protected $rules = [
-        'loginId'         => 'required|max:32',
-        'password'        => 'required|max:32',
-        'orderId'         => 'max:30',
-        'firstName'       => 'required|max:50',
-        'lastName'        => 'required|max:50',
-        'emailAddress'    => 'required|max:255',
-        'phoneNumber'     => 'required|max:32',
-        'shipAddress1'    => 'required|max:100',
-        'shipCity'        => 'required|max:30',
-        'shipPostalCode'  => 'required|max:20',
-        'shipState'       => 'required|max:6|valid_state_for_country:shipCountry',
-        'shipCountry'     => 'required|max:2',
-        'campaignId'      => 'int',
-        'redirectTo'      => 'required|max:100',
-        'errorRedirectTo' => 'required|max:100',
-        'sessionId'       => 'required|max:32',
+        'loginId'              => 'required|max:32',
+        'password'             => 'required|max:32',
+        'orderId'              => 'max:30',
+        'firstName'            => 'required|max:50',
+        'lastName'             => 'required|max:50',
+        'companyName'          => 'max:30',
+        'address1'             => 'required|max:30',
+        'address2'             => 'max:30',
+        'postalCode'           => 'required|max:20',
+        'city'                 => 'required|max:30',
+        'state'                => 'required|max:6',
+        'country'              => 'required|max:2',
+        'emailAddress'         => 'max:255',
+        'phoneNumber'          => 'max:32',
+        'ipAddress'            => 'max:32',
+        'billShipSame'         => 'boolean',
+        'shipFirstName'        => 'max:30',
+        'shipLastName'         => 'max:30',
+        'shipCompanyName'      => 'max:30',
+        'shipAddress1'         => 'max:30',
+        'shipAddress2'         => 'max:30',
+        'shipPostalCode'       => 'max:20',
+        'shipCity'             => 'max:30',
+        'shipState'            => 'max:6',
+        'shipCountry'          => 'max:2',
+        'campaignId'           => 'required|int',
+        'affId'                => 'max:10',
+        'sourceValue1'         => 'max:30',
+        'sourceValue2'         => 'max:30',
+        'sourceValue3'         => 'max:30',
+        'custom1'              => 'max:30',
+        'custom2'              => 'max:30',
+        'custom3'              => 'max:30',
+        'custom4'              => 'max:30',
+        'custom5'              => 'max:30',
+        'disableCustomerDedup' => 'boolean',
     ];
 }

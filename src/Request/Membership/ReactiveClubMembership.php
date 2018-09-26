@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 1:19 PM
- */
 
 namespace Konnektive\Request\Membership;
 
@@ -27,9 +22,9 @@ class ReactiveClubMembership extends Request
     protected $verb = "GET";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
+        'loginId'  => 'required|max:32',
         'password' => 'required|max:32',
-        'clubId' => 'required|integer',
-        'memberId' => 'required|max:32'
+        'clubId'   => 'required|integer',
+        'memberId' => 'required|max:32',
     ];
 }

@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 1:25 PM
- */
 
 namespace Konnektive\Request\Report;
 
@@ -35,18 +30,18 @@ class QueryRetentionReportRequest extends Request
     protected $verb = "GET";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'reportType' => 'required|in:campaign,source,mid',
-        'campaignId' => 'integer',
-        'productId' => 'integer',
-        'affiliateId' => 'max:255',
-        'callCenterId' => 'max:255',
-        'maxCycles' => 'integer',
-        'include' => 'in:ByProduct,ByPublisher,BySubAff',
-        'startDate' => 'date_format:"m/d/Y"|before:endDate',
-        'endDate' => 'date_format:"m/d/Y"|after:startDate',
+        'loginId'        => 'required|max:32',
+        'password'       => 'required|max:32',
+        'reportType'     => 'required|in:campaign,source,mid',
+        'campaignId'     => 'integer',
+        'productId'      => 'integer',
+        'affiliateId'    => 'max:255',
+        'callCenterId'   => 'max:255',
+        'maxCycles'      => 'integer',
+        'include'        => 'in:ByProduct,ByPublisher,BySubAff',
+        'startDate'      => 'date_format:"m/d/Y"|before:endDate',
+        'endDate'        => 'date_format:"m/d/Y"|after:startDate',
         'resultsPerPage' => 'integer|max:200',
-        'page' => 'integer'
+        'page'           => 'integer',
     ];
 }

@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 1:31 PM
- */
 
 namespace Konnektive\Request\Report;
 
@@ -31,15 +26,15 @@ class QueryCampaignRequest extends Request
     protected $verb = "GET";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'campaignId' => 'integer',
-        'campaignName' => 'max:30',
-        'campaignType' => 'in:PHONE,ECOMMERCE,LANDER',
-        'startDate' => 'date_format:"m/d/Y"',
-        'endDate' => 'date_format:"m/d/Y"',
+        'loginId'        => 'required|max:32',
+        'password'       => 'required|max:32',
+        'campaignId'     => 'integer',
+        'campaignName'   => 'max:30',
+        'campaignType'   => 'in:PHONE,ECOMMERCE,LANDER',
+        'startDate'      => 'date_format:"m/d/Y"',
+        'endDate'        => 'date_format:"m/d/Y"',
         'resultsPerPage' => 'integer|max:200',
-        'page' => 'integer'
+        'page'           => 'integer',
     ];
 
 }

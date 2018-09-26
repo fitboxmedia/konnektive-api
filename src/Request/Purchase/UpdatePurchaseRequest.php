@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 12:18 PM
- */
 
 namespace Konnektive\Request\Purchase;
 
@@ -33,17 +28,17 @@ class UpdatePurchaseRequest extends Request
     protected $endpointUri = "/purchase/update/";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'purchaseId' => 'required|max:30',
-        'reactivate' => 'boolean',
-        'status' => 'in:RECYCLE_BILLING,RECYCLE_FAILED',
-        'billNow' => 'boolean',
-        'newMerchantId' => 'integer',
-        'price' => 'numeric',
-        'shippingPrice' => 'numeric',
-        'nextBillDate' => 'date_format:"m/d/Y"',
+        'loginId'             => 'required|max:32',
+        'password'            => 'required|max:32',
+        'purchaseId'          => 'required|max:30',
+        'reactivate'          => 'boolean',
+        'status'              => 'in:RECYCLE_BILLING,RECYCLE_FAILED',
+        'billNow'             => 'boolean',
+        'newMerchantId'       => 'integer',
+        'price'               => 'numeric',
+        'shippingPrice'       => 'numeric',
+        'nextBillDate'        => 'date_format:"m/d/Y"',
         'billingIntervalDays' => 'integer',
-        'finalBillingCycle' => 'integer'
+        'finalBillingCycle'   => 'integer',
     ];
 }

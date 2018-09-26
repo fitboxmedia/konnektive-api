@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/1/2016
- * Time: 10:16 PM
- */
 
 namespace Konnektive\Request;
 
@@ -133,8 +128,10 @@ abstract class Request extends Model
              */
             if (isset($parameters[0]) && $country = strtoupper($this->getAttribute($parameters[0]))) {
                 $zones = $this->getZonesList();
+
                 return isset($zones[$country]) && isset($zones[$country]['valid_states'][$value]);
             }
+
             return false;
         });
     }

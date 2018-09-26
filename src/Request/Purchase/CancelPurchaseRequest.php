@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 12:22 PM
- */
 
 namespace Konnektive\Request\Purchase;
 
@@ -27,11 +22,11 @@ class CancelPurchaseRequest extends Request
     protected $endpointUri = "/purchase/cancel/";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'purchaseId' => 'required|max:30',
-        'cancelReason' => 'required|max:100',
-        'fullRefund' => 'boolean',
+        'loginId'       => 'required|max:32',
+        'password'      => 'required|max:32',
+        'purchaseId'    => 'required|max:30',
+        'cancelReason'  => 'required|max:100',
+        'fullRefund'    => 'boolean',
         'afterNextBill' => 'boolean',
     ];
 }

@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 11:26 AM
- */
 
 namespace Konnektive\Request\Order;
 
@@ -30,14 +25,14 @@ class ImportUpsaleRequest extends Request
     protected $endpointUri = "/upsale/import/";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'orderId' => 'required|max:32',
-        'productId' => 'required|integer',
-        'productQty' => 'integer',
-        'productPrice' => 'numeric',
+        'loginId'          => 'required|max:32',
+        'password'         => 'required|max:32',
+        'orderId'          => 'required|max:32',
+        'productId'        => 'required|integer',
+        'productQty'       => 'integer',
+        'productPrice'     => 'numeric',
         'productShipPrice' => 'numeric',
-        'productSalesTax' => 'numeric',
-        'replaceProductId' => 'integer'
+        'productSalesTax'  => 'numeric',
+        'replaceProductId' => 'integer',
     ];
 }

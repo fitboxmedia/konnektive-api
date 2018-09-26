@@ -1,11 +1,7 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 11:52 AM
- */
 
 namespace Konnektive\Request\Order;
+
 use Konnektive\Request\Request;
 
 /**
@@ -25,11 +21,11 @@ class CancelOrderRequest extends Request
     protected $endpointUri = "/order/cancel/";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'orderId' => 'required|max:30',
-        'cancelReason' => 'required|max:100',
-        'fullRefund' => 'boolean',
+        'loginId'       => 'required|max:32',
+        'password'      => 'required|max:32',
+        'orderId'       => 'required|max:30',
+        'cancelReason'  => 'required|max:100',
+        'fullRefund'    => 'boolean',
         'afterNextBill' => 'boolean',
     ];
 }

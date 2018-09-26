@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 1:07 PM
- */
 
 namespace Konnektive\Request\Membership;
 
@@ -34,16 +29,16 @@ class QueryClubMembersRequest extends Request
     protected $verb = "GET";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'memberId' => 'max:30',
-        'customerId' => 'required|integer',
-        'orderId' => 'max:30',
-        'purchaseId' => 'max:30',
-        'clubId' => 'required|integer',
-        'startDate' => 'required_without:memberId,orderId,purchaseId,customerId|date_format:"m/d/Y"|before:endDate',
-        'endDate' => 'required_without:memberId,orderId,purchaseId,customerId|date_format:"m/d/Y"|after:startDate',
+        'loginId'        => 'required|max:32',
+        'password'       => 'required|max:32',
+        'memberId'       => 'max:30',
+        'customerId'     => 'required|integer',
+        'orderId'        => 'max:30',
+        'purchaseId'     => 'max:30',
+        'clubId'         => 'required|integer',
+        'startDate'      => 'required_without:memberId,orderId,purchaseId,customerId|date_format:"m/d/Y"|before:endDate',
+        'endDate'        => 'required_without:memberId,orderId,purchaseId,customerId|date_format:"m/d/Y"|after:startDate',
         'resultsPerPage' => 'numeric|max:200',
-        'page' => 'numeric'
+        'page'           => 'numeric',
     ];
 }

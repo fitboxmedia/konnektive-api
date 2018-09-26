@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 11:49 AM
- */
 
 namespace Konnektive\Request\Order;
 
@@ -26,10 +21,10 @@ class RefundOrderRequest extends Request
     protected $endpointUri = "/order/refund/";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'orderId' => 'required|max:30',
+        'loginId'      => 'required|max:32',
+        'password'     => 'required|max:32',
+        'orderId'      => 'required|max:30',
         'refundAmount' => 'required_if:fullRefund,0|numeric',
-        'fullRefund' => 'boolean'
+        'fullRefund'   => 'boolean',
     ];
 }

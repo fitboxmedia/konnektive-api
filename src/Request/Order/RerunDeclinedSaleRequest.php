@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 11:31 AM
- */
 
 namespace Konnektive\Request\Order;
 
@@ -23,10 +18,10 @@ class RerunDeclinedSaleRequest extends Request
 {
     protected $endpointUri = "/order/rerun/";
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'orderId' => 'required|max:30',
-        'forceBillerId' => 'max:30',
+        'loginId'             => 'required|max:32',
+        'password'            => 'required|max:32',
+        'orderId'             => 'required|max:30',
+        'forceBillerId'       => 'max:30',
         'forceLoadBalancerId' => 'max:30',
     ];
 }

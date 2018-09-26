@@ -1,9 +1,5 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/6/2016
- * Time: 6:28 PM
- */
+
 
 namespace Konnektive\Tests\Request;
 
@@ -77,122 +73,122 @@ class RequestTest extends TestCase
         QueryRetentionReportRequest::class,
         //Transaction
         QueryTransactionsRequest::class,
-        UpdateTransactionRequest::class
+        UpdateTransactionRequest::class,
     ];
 
     private function getValidFillData()
     {
         return [
-            "achAccountNumber" => "22222222222222",
-            "achAccountType" => "CHECKING",
-            "achRoutingNumber" => "111111111",
-            "action" => "APPROVE",
-            "address1" => "123 Fake St.",
-            "address2" => "Suite 12",
-            "affId" => "TestAff",
-            "affiliateId" => "TestAff",
+            "achAccountNumber"     => "22222222222222",
+            "achAccountType"       => "CHECKING",
+            "achRoutingNumber"     => "111111111",
+            "action"               => "APPROVE",
+            "address1"             => "123 Fake St.",
+            "address2"             => "Suite 12",
+            "affId"                => "TestAff",
+            "affiliateId"          => "TestAff",
             "afterNextBill",
             "billNow",
-            "billShipSame" => "0",
+            "billShipSame"         => "0",
             "billingIntervalDays",
             "callCenterId",
-            "campaignId" => "22",
-            "campaignName" => "Test Face Cream",
+            "campaignId"           => "22",
+            "campaignName"         => "Test Face Cream",
             "campaignType",
-            "cancelReason" => "I don't like stuff",
-            "cardBin" => "444444",
-            "cardExpiryDate" => "02/2020",
-            "cardLast4" => "1111",
-            "cardMonth" => "02",
-            "cardNumber" => "4111111111111111",
-            "cardSecurityCode" => "123",
-            "cardYear" => "2020",
-            "chargebackAmount" => "20.02",
-            "chargebackDate" => "02/15/2020",
-            "chargebackNote" => "Chargebacking for some reason",
+            "cancelReason"         => "I don't like stuff",
+            "cardBin"              => "444444",
+            "cardExpiryDate"       => "02/2020",
+            "cardLast4"            => "1111",
+            "cardMonth"            => "02",
+            "cardNumber"           => "4111111111111111",
+            "cardSecurityCode"     => "123",
+            "cardYear"             => "2020",
+            "chargebackAmount"     => "20.02",
+            "chargebackDate"       => "02/15/2020",
+            "chargebackNote"       => "Chargebacking for some reason",
             "chargebackReasonCode" => "666",
-            "city" => "Denver",
-            "clubId" => "200",
-            "companyName" => "TestCompany",
-            "country" => "US",
-            "couponCode" => "Testcoupon",
-            "custom1" => "Customization",
-            "custom2" => "Customization",
-            "custom3" => "Customization",
-            "custom4" => "Customization",
-            "custom5" => "Customization",
-            "customerId" => "123123",
+            "city"                 => "Denver",
+            "clubId"               => "200",
+            "companyName"          => "TestCompany",
+            "country"              => "US",
+            "couponCode"           => "Testcoupon",
+            "custom1"              => "Customization",
+            "custom2"              => "Customization",
+            "custom3"              => "Customization",
+            "custom4"              => "Customization",
+            "custom5"              => "Customization",
+            "customerId"           => "123123",
             "dateRangeType",
-            "dateReturned" => '02/15/2002',
-            "dateShipped" => "02/15/2020",
-            "emailAddress" => "test@email.com",
-            "endDate" => "02/15/2019",
-            "errorRedirectsTo" => "http://localhost",
+            "dateReturned"         => '02/15/2002',
+            "dateShipped"          => "02/15/2020",
+            "emailAddress"         => "test@email.com",
+            "endDate"              => "02/15/2019",
+            "errorRedirectsTo"     => "http://localhost",
             "finalBillingCycle",
-            "firstName" => "TestFirst",
+            "firstName"            => "TestFirst",
             "forceQA",
-            "fulfillmentId" => "999",
-            "fulfillmentStatus" => "SHIPPED", //SHIPPED,RMA_PENDING,RETURNED,CANCELLED
-            "fullRefund" => true,
+            "fulfillmentId"        => "999",
+            "fulfillmentStatus"    => "SHIPPED", //SHIPPED,RMA_PENDING,RETURNED,CANCELLED
+            "fullRefund"           => true,
             "include",
             "insureShipment",
-            "ipAddress" => "192.168.0.1",
+            "ipAddress"            => "192.168.0.1",
             "isChargedback",
             "isDeclineSave",
-            "lastName" => "TestLast",
-            "loginId" => "SomeValidStringForID",
+            "lastName"             => "TestLast",
+            "loginId"              => "SomeValidStringForID",
             "maxCycles",
-            "memberId" => "444",
-            "merchantId" => "555",
-            "merchantTxnId" => "666",
-            "message" => "TestMessage",
-            "midId" => "123123",
-            "newMerchantId" => "834384",
+            "memberId"             => "444",
+            "merchantId"           => "555",
+            "merchantTxnId"        => "666",
+            "message"              => "TestMessage",
+            "midId"                => "123123",
+            "newMerchantId"        => "834384",
             "nextBillDate",
-            "orderId" => "10",
+            "orderId"              => "10",
             "orderStatus",
             "page",
-            "pageType" => "thankyouPage", //presellPage,leadPage,checkoutPage,upsellPage1,upsellPage2,upsellPage3,upsellPage4,thankyouPage
-            "password" => "SomeValidPassword",
-            "paySource" => "CREDITCARD", //CREDITCARD,CHECK,ACCTONFILE,PREPAID
-            "phoneNumber" => "8018888888",
-            "postalCode" => "80188",
+            "pageType"             => "thankyouPage", //presellPage,leadPage,checkoutPage,upsellPage1,upsellPage2,upsellPage3,upsellPage4,thankyouPage
+            "password"             => "SomeValidPassword",
+            "paySource"            => "CREDITCARD", //CREDITCARD,CHECK,ACCTONFILE,PREPAID
+            "phoneNumber"          => "8018888888",
+            "postalCode"           => "80188",
             "preAuthBillerId",
             "preAuthMerchantTxnId",
             "price",
-            'product1_id' => '1',
-            'product1_qty' => '2',
-            'product1_price' => '2.00',
-            'product1_shipPrice' => '1.00',
-            "productId" => "123123123",
+            'product1_id'          => '1',
+            'product1_qty'         => '2',
+            'product1_price'       => '2.00',
+            'product1_shipPrice'   => '1.00',
+            "productId"            => "123123123",
             "productPrice",
             "productQty",
             "productSalesTax",
             "productShipPrice",
-            "purchaseId" => "1000001",
+            "purchaseId"           => "1000001",
             "reactivate",
             "redirectsTo",
-            "refundAmount" => "10.00",
+            "refundAmount"         => "10.00",
             "replaceProductId",
-            "reportType" => "campaign", //campaign,source,mid
-            "requestUri" => "http://localhost",
+            "reportType"           => "campaign", //campaign,source,mid
+            "requestUri"           => "http://localhost",
             "responseType",
             "resultsPerPage",
-            "rmaNumber" => "123123123",
+            "rmaNumber"            => "123123123",
             "salesTax",
-            "sessionId" => "454545",
-            "shipAddress1" => "123 Fake St.",
+            "sessionId"            => "454545",
+            "shipAddress1"         => "123 Fake St.",
             "shipAddress2",
             "shipCarrier",
-            "shipCity" => "Salt Lake City",
-            "shipCompanyName" => "Fake shipping company",
-            "shipCountry" => "US",
-            "shipFirstName" => "Test",
-            "shipLastName" => "Tester",
+            "shipCity"             => "Salt Lake City",
+            "shipCompanyName"      => "Fake shipping company",
+            "shipCountry"          => "US",
+            "shipFirstName"        => "Test",
+            "shipLastName"         => "Tester",
             "shipMethod",
-            "shipPostalCode" => "84040",
+            "shipPostalCode"       => "84040",
             "shipProfileId",
-            "shipState" => "TN",
+            "shipState"            => "TN",
             "shippingPrice",
             "sortDir",
             "sourceValue1",
@@ -200,13 +196,14 @@ class RequestTest extends TestCase
             "sourceValue3",
             "sourceValue4",
             "sourceValue5",
-            "startDate" => "02/15/2002",
-            "state" => "UT",
+            "startDate"            => "02/15/2002",
+            "state"                => "UT",
             "status",
-            "trackingNumber" => "AA123456789AA",
-            "transactionId" => "123123123",
+            "trackingNumber"       => "AA123456789AA",
+            "transactionId"        => "123123123",
             "txnType",
-            "userAgent" => "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36",
+            "markChargeback"       => true,
+            "userAgent"            => "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36",
         ];
     }
 
@@ -258,7 +255,8 @@ class RequestTest extends TestCase
         $this->assertValid($request);
     }
 
-    public function testDynamicProductsWithJustProductId(){
+    public function testDynamicProductsWithJustProductId()
+    {
         $request = new ImportOrderRequest();
         $this->fillModel($request);
 
@@ -407,7 +405,8 @@ class RequestTest extends TestCase
         $this->assertValid($request);
     }
 
-    public function testQueryCustomerHistoryMissingCustomer(){
+    public function testQueryCustomerHistoryMissingCustomer()
+    {
         $request = new QueryCustomerHistoryRequest();
         $this->fillModel($request);
 
@@ -415,7 +414,8 @@ class RequestTest extends TestCase
         $this->assertValid($request);
     }
 
-    public function testQueryClubMembersMissingMemberId(){
+    public function testQueryClubMembersMissingMemberId()
+    {
         $request = new QueryClubMembersRequest();
         $this->fillModel($request);
 
@@ -423,7 +423,8 @@ class RequestTest extends TestCase
         $this->assertValid($request);
     }
 
-    public function testQueryClubMembersMissingPurchaseId(){
+    public function testQueryClubMembersMissingPurchaseId()
+    {
         $request = new QueryClubMembersRequest();
         $this->fillModel($request);
 
@@ -431,7 +432,8 @@ class RequestTest extends TestCase
         $this->assertValid($request);
     }
 
-    public function testQueryClubMembersMissingOrderId(){
+    public function testQueryClubMembersMissingOrderId()
+    {
         $request = new QueryClubMembersRequest();
         $this->fillModel($request);
 
@@ -439,7 +441,8 @@ class RequestTest extends TestCase
         $this->assertValid($request);
     }
 
-    public function testTransactionQueryMissingPurchaseId(){
+    public function testTransactionQueryMissingPurchaseId()
+    {
         $request = new QueryTransactionsRequest();
         $this->fillModel($request);
 
@@ -447,7 +450,8 @@ class RequestTest extends TestCase
         $this->assertValid($request);
     }
 
-    public function testTransactionQueryMissingOrderId(){
+    public function testTransactionQueryMissingOrderId()
+    {
         $request = new QueryTransactionsRequest();
         $this->fillModel($request);
 
@@ -459,11 +463,11 @@ class RequestTest extends TestCase
     {
         try {
             $request->validate();
+            $this->assertTrue(true);
         } catch (ValidationException $v) {
             $this->fail("Failed to validate " . get_class($request) . ": " . json_encode($v->validator->failed()));
         }
     }
-
 
     public function assertInvalid(Request $request)
     {
@@ -471,6 +475,7 @@ class RequestTest extends TestCase
             $request->validate();
         } catch (ValidationException $v) {
             $this->assertTrue(true);
+
             return true;
         }
 

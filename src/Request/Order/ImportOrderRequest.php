@@ -1,13 +1,7 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 9:17 AM
- */
 
 namespace Konnektive\Request\Order;
 
-use Carbon\Carbon;
 use Konnektive\Request\Request;
 
 /**
@@ -44,15 +38,14 @@ class ImportOrderRequest extends Request
         'password'           => 'required|max:32',
         'orderId'            => 'max:30',
         'billShipSame'       => 'boolean',
-        'paySource'          => 'required|in:CREDITCARD,PREPAID',
+        'paySource'          => 'required|in:CREDITCARD,PREPAID,CHECK,ACCTONFILE,COD,DIRECTDEBIT',
         'cardNumber'         => 'required_if:paySource,CREDITCARD|numeric|digits:16|creditcard',
         'cardSecurityCode'   => 'required_if:paySource,CREDITCARD|numeric|digits_between:3,4',
         'cardMonth'          => 'required_if:paySource,CREDITCARD|between:1,12',
         'cardYear'           => 'required_if:paySource,CREDITCARD|date_format:"Y"',
-        'orderItems'         => 'required|json',
         'redirectsTo'        => 'max:300',
         'errorRedirectsTo'   => 'max:300',
-        'salesUrl'           => 'required|max:300',
+        'salesUrl'           => 'max:300',
         'campaignId'         => 'required|numeric',
         'product1_id'        => 'required|numeric',
         'product1_qty'       => 'numeric',

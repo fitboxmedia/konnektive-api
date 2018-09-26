@@ -6,11 +6,6 @@ use Konnektive\Contracts\IHandler;
 use Konnektive\Request\Request;
 use Konnektive\Response\Response;
 
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/6/2016
- * Time: 5:54 PM
- */
 class CurlHandler implements IHandler
 {
 

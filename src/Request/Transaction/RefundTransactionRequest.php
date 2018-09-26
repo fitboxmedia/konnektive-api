@@ -29,13 +29,13 @@ class RefundTransactionRequest extends Request
     protected $endpointUri = "/transactions/refund/";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
-        'password' => 'required|max:32',
-        'transactionId' => 'required|max:30',
-        'refundAmount' => 'required|numeric',
-        'fullRefund'    => 'boolean',
-        'cancelPurchase' => 'boolean',
-        'externalRefund' => 'boolean',
+        'loginId'             => 'required|max:32',
+        'password'            => 'required|max:32',
+        'transactionId'       => 'required|max:30',
+        'refundAmount'        => 'required|numeric',
+        'fullRefund'          => 'boolean',
+        'cancelPurchase'      => 'boolean',
+        'externalRefund'      => 'boolean',
         'refundMerchantTxnId' => 'required|max:500',
     ];
 }

@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 11:55 AM
- */
 
 namespace Konnektive\Request\Order;
 
@@ -25,9 +20,9 @@ class OrderQARequest extends Request
     protected $endpointUri = "/order/qa/";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
+        'loginId'  => 'required|max:32',
         'password' => 'required|max:32',
-        'orderId' => 'required|max:30',
-        'action' => 'required|in:APPROVE,DECLINE'
+        'orderId'  => 'required|max:30',
+        'action'   => 'required|in:APPROVE,DECLINE',
     ];
 }

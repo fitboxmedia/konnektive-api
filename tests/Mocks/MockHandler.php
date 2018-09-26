@@ -8,9 +8,8 @@ use Konnektive\Request\Request;
 use Konnektive\Response\Response;
 
 /**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/8/2016
- * Time: 11:30 AM
+ * Class MockHandler
+ * @package Konnektive\Tests\Mocks
  */
 class MockHandler implements IHandler
 {

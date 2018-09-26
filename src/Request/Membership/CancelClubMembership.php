@@ -1,9 +1,4 @@
 <?php
-/**
- * Author: Hassletauf <hassletauf@gmail.com>
- * Date: 10/2/2016
- * Time: 1:13 PM
- */
 
 namespace Konnektive\Request\Membership;
 
@@ -25,9 +20,9 @@ class CancelClubMembership extends Request
     protected $endpointUri = "/members/cancel/";
 
     protected $rules = [
-        'loginId' => 'required|max:32',
+        'loginId'  => 'required|max:32',
         'password' => 'required|max:32',
-        'clubId' => 'required|integer',
-        'memberId' => 'required|max:32'
+        'clubId'   => 'required|integer',
+        'memberId' => 'required|max:32',
     ];
 }
